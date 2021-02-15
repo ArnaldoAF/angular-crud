@@ -1,24 +1,30 @@
 <div class="container ">
     <h2>Escolas</h2>
-    <a [routerLink]="['/schools/add/0']" class="btn btn-primary mb-4">Adiconar Escola</a>
-    <table class="table">
-        <thead>
-            <th>Codigo</th>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>CNPJ</th>
-            <th></th>
-            <th></th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let school of schoolList">
-                <td>{{ school.id }}</td>
-                <td>{{ school.name }}</td>
-                <td>{{ school.address }}</td>
-                <td>{{ school.cnpj }}</td>
-                <td><a [routerLink]="['/schools/edit',school.id]">Editar</a> </td>
-                <td><button (click)="onDelete(school.id)" class="btn btn-primary">Excluir</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <a [routerLink]="['/schools/add/0']" class="btn btn-primary mb-4 col">Adiconar Escola</a>
+    </div>
+    <div class="table-responsive-sm">
+        <table class="table table-striped ">
+            <thead>
+                <th>Codigo</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>CNPJ</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let school of schoolList">
+                    <td>{{ school.id }}</td>
+                    <td>{{ school.name }}</td>
+                    <td>{{ school.address }}</td>
+                    <td>{{ school.cnpj }}</td>
+                    <td>
+                        <a [routerLink]="['/schools/edit',school.id]" class="btn btn-primary"><img src="../../../../assets/icons/pencil.svg" class="icon" alt="icon name" /></a>
+                    </td>
+                    <td><button (click)="onDelete(school.id)" class="btn btn-danger"><img  src="../../../../assets/icons/trash.svg" class="icon" alt="icon name"/></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

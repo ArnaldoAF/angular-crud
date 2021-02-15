@@ -18,11 +18,14 @@
             <label for="">CNPJ</label>
             <input type="text" class="form-control" [ngModel]="school.cnpj" name="cnpj" required>
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a [routerLink]="['/schools']" class="btn btn-secundary">Cancelar</a>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary mr-3 col">Salvar</button>
+            <a [routerLink]="['/schools']" class="btn btn-secondary col">Cancelar</a>
         </div>
     </form>
-    <button *ngIf="!operation" (click)="onDelete(school.id)" class="btn btn-secundary">Deletar</button>
+    <div class=" row">
+        <button *ngIf="!operation" (click)="onDelete(school.id)" class="btn btn-danger col-3 "><img src="../../../../assets/icons/trash.svg" alt="icon name" class="icon"/></button>
+    </div>
+
 
 </div>
