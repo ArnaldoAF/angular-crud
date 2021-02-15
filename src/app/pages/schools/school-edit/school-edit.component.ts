@@ -46,9 +46,10 @@ export class SchoolEditComponent implements OnInit {
       cnpj
     }
 
-    
-    await this.schoolService.onUpdate(school)
-    
+    if(this.id === 0) 
+      await this.schoolService.onAdd(school);
+    else
+      await this.schoolService.onUpdate(school);
     
     this.router.navigateByUrl('/schools')
   }

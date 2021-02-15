@@ -17,6 +17,12 @@
     },
     {
       "id": 4
+    },
+    {
+      "name": "E.E Coelho Perpetuo",
+      "address": "asd",
+      "cnpj": "01.012.012/01234-80",
+      "id": 5
     }
   ],
   "classrooms": [

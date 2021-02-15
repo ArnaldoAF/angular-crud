@@ -20,7 +20,7 @@ export class SchoolService {
   constructor(private http: HttpClient) { }
 
   async onGet():Promise<School[]> {
-    
+
     const response = await this.http.get<School[]>(this.configUrl).toPromise();
     console.log(response);
     return response;
@@ -32,8 +32,13 @@ export class SchoolService {
     return response;
   }
 
-  onAdd(school: School) {
-
+  async onAdd(school: School) {
+    console.log(school);
+    
+    const response = await this.http.post<School>(this.configUrl, school).toPromise();
+    console.log("onAdd",response);
+    
+    return response;
   }
 
   async onUpdate(school: School) {
