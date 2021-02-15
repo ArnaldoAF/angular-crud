@@ -1,0 +1,43 @@
+{
+    "schools": [{
+            "id": 1,
+            "name": "E.E Francisco Franco",
+            "address": "Rua Patagua, n102, Jardim das Flores",
+            "cnpj": "01.012.012/01234-99"
+        },
+        {
+            "id": 2,
+            "name": "E.E Coelho Gracioso",
+            "address": "Rua pitanga, n30, Jardim das Árvores",
+            "cnpj": "01.012.012/01234-10"
+        },
+        {
+            "id": 3,
+            "name": "E.E Coelho Gracioso",
+            "address": "Rua pitanga, n30, Jardim das Árvores",
+            "cnpj": "01.012.012/01234-50"
+        }
+    ],
+    "classrooms": [{
+            "id": 1,
+            "grade": "F",
+            "year": "6",
+            "class": "A",
+            "id_school": 2
+        },
+        {
+            "id": 2,
+            "grade": "M",
+            "year": "1",
+            "class": "B",
+            "id_school": 1
+        },
+        {
+            "id": 3,
+            "grade": "F",
+            "year": "1",
+            "class": "C",
+            "id_school": 3
+        }
+    ]
+}
