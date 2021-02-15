@@ -14,6 +14,7 @@ export class SchoolsComponent implements OnInit {
   constructor(private schoolService: SchoolService) { }
 
   async ngOnInit() {
+    this.schoolList = [];
     this.schoolList = await this.schoolService.onGet();
   }
 

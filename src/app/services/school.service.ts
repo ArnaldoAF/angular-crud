@@ -20,21 +20,28 @@ export class SchoolService {
   constructor(private http: HttpClient) { }
 
   async onGet():Promise<School[]> {
+    
     const response = await this.http.get<School[]>(this.configUrl).toPromise();
     console.log(response);
     return response;
   }
 
-  onGetSchool(id: Number) {
-    
+  async onGetSchool(id: Number):Promise<School> {
+    const response = await this.http.get<School>(this.configUrl+"/"+id).toPromise();
+    console.log(response);
+    return response;
   }
 
   onAdd(school: School) {
 
   }
 
-  onUpdate(school: School) {
-
+  async onUpdate(school: School) {
+    console.log(school);
+    const response = await this.http.put<School>(this.configUrl+"/"+school.id, school).toPromise();
+    console.log("OnUpdate",response);
+    
+    return response;
   }
 
   onDelete(id:Number) {

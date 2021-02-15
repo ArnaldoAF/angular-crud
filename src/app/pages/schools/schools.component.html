@@ -1,6 +1,6 @@
 <div class="container ">
     <h2>Escolas</h2>
-    <a [routerLink]="['school/add/0']" class="btn btn-primary mb-4">Add Element</a>
+    <a [routerLink]="['/schools/add/0']" class="btn btn-primary mb-4">Add Element</a>
     <table class="table">
         <thead>
             <th>Codigo</th>
@@ -16,7 +16,7 @@
                 <td>{{ school.name }}</td>
                 <td>{{ school.address }}</td>
                 <td>{{ school.cnpj }}</td>
-                <td><a [routerLink]="['school/edit',school.id]">Editar</a> </td>
+                <td><a [routerLink]="['/schools/edit',school.id]">Editar</a> </td>
                 <td><button (click)="onDelete(school.id)" class="btn btn-primary">Excluir</button></td>
             </tr>
         </tbody>
