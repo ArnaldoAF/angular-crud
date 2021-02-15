@@ -1,0 +1,43 @@
+<div class="container ">
+    <h2>Turmas</h2>
+    <div class="row">
+        <a [routerLink]="['/classrooms/add/0']" class="btn btn-primary mb-3 col">Adiconar Turma</a>
+    </div>
+    <div class="dropdown mb-4">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecionar Escola
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a *ngFor="let school of schoolList" class="dropdown-item">
+                {{school.name}}
+            </a>
+
+        </div>
+    </div>
+    <div class="table-responsive-sm">
+        <table class="table table-striped ">
+            <thead>
+                <th>Codigo</th>
+                <th>Escola</th>
+                <th>Fun/Med</th>
+                <th>Série</th>
+                <th>Turma</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let classroom of classroomList">
+                    <td>{{ classroom.id }}</td>
+                    <td>{{ classroom.school.name }}</td>
+                    <td>{{ classroom.grade }}</td>
+                    <td>{{ classroom.year }}</td>
+                    <td>{{ classroom.class }}</td>
+                    <td>
+                        <a [routerLink]="['/classrooms/edit',classroom.id]" class="btn btn-primary"><img src="../../../../assets/icons/pencil.svg" class="icon" alt="icon name" /></a>
+                    </td>
+                    <td><button (click)="onDelete(classroom.id)" class="btn btn-danger"><img  src="../../../../assets/icons/trash.svg" class="icon" alt="icon name"/></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

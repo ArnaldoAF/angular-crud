@@ -1,11 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { School } from '../models/school.model';
-//import { Http } from '@angular/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import * as _ from 'lodash';
 
 
 
@@ -15,7 +13,6 @@ import * as _ from 'lodash';
 export class SchoolService {
   configUrl = ' http://localhost:3000/schools';
 
-  schoolList: School[];
 
   constructor(private http: HttpClient) { }
 

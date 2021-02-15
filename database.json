@@ -5,6 +5,18 @@
       "name": "aasd",
       "address": "asdasd",
       "cnpj": "32135151"
+    },
+    {
+      "id": 2,
+      "name": "Escola ",
+      "address": "asdasdsa",
+      "cnpj": "32132132"
+    },
+    {
+      "id": 3,
+      "name": "Escola 3",
+      "address": "Rua pitanga, n30, Jardim das Árvores",
+      "cnpj": "321321312"
     }
   ],
   "classrooms": [

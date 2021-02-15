@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SchoolsComponent } from './pages/schools/schools.component';
 import { SchoolEditComponent } from './pages/schools/school-edit/school-edit.component';
 import { FormsModule } from '@angular/forms';
+import { ClassroomsComponent } from './pages/classrooms/classrooms.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomepageComponent,
     HeaderComponent,
     SchoolsComponent,
-    SchoolEditComponent
+    SchoolEditComponent,
+    ClassroomsComponent
   ],
   imports: [
     BrowserModule,
