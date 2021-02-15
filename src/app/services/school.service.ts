@@ -49,7 +49,8 @@ export class SchoolService {
     return response;
   }
 
-  onDelete(id:Number) {
-
+  async onDelete(id:Number) {
+    const response = await this.http.delete(this.configUrl+"/"+id).toPromise();
+    return response;
   }
 }

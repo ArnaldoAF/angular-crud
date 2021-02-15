@@ -7,22 +7,10 @@
       "cnpj": "01.012.012/01234-99"
     },
     {
-      "id": 2
-    },
-    {
       "id": 3,
       "name": "E.E Coelho Graciosoooooo",
       "address": "Rua pitanga, n30, Jardim das Árvores",
       "cnpj": "01.012.012/01234-50"
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "E.E Coelho Perpetuo",
-      "address": "asd",
-      "cnpj": "01.012.012/01234-80",
-      "id": 5
     }
   ],
   "classrooms": [

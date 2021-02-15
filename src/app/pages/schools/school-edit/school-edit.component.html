@@ -1,5 +1,5 @@
 <div class="container ">
-    <h2>{{header}}</h2>
+    <h2>{{operation ? 'Criar Escola' : 'Editar Escola'}}</h2>
 
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
@@ -23,5 +23,6 @@
             <a [routerLink]="['/schools']" class="btn btn-secundary">Cancelar</a>
         </div>
     </form>
+    <button *ngIf="!operation" (click)="onDelete(school.id)" class="btn btn-secundary">Deletar</button>
 
 </div>

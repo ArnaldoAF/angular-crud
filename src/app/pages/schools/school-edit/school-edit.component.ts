@@ -11,7 +11,7 @@ import { SchoolService } from 'src/app/services/school.service';
 })
 export class SchoolEditComponent implements OnInit {
   id: number;
-  header: string;
+  operation: boolean;
   school: School = {
     id:0,
     name:'',
@@ -23,7 +23,7 @@ export class SchoolEditComponent implements OnInit {
 
   async ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    this.header = this.id === 0 ? 'Criar Escola' : 'Editar Escola';
+    this.operation = this.id === 0;
 
     if(this.id != 0) {
       this.school = await this.schoolService.onGetSchool(this.id);
@@ -32,12 +32,14 @@ export class SchoolEditComponent implements OnInit {
 
   async onSubmit(form: NgForm) {
     const {
-      id,
       name,
       address,
       cnpj
     } = form.value;
-
+    console.log(form);
+    const {
+      value:id
+    } = form.control.controls.id;
 
     let school: School = {
       id,
@@ -51,6 +53,11 @@ export class SchoolEditComponent implements OnInit {
     else
       await this.schoolService.onUpdate(school);
     
+    this.router.navigateByUrl('/schools')
+  }
+
+  async onDelete(id:number) {
+    await this.schoolService.onDelete(id);
     this.router.navigateByUrl('/schools')
   }
 
