@@ -13,13 +13,18 @@ export class SchoolsComponent implements OnInit {
 
   constructor(private schoolService: SchoolService) { }
 
-  async ngOnInit() {
+  async ReloadList() {
     this.schoolList = [];
     this.schoolList = await this.schoolService.onGet();
   }
 
-  onDelete(id:Number) {
-    this.schoolService.onDelete(id)
+  async ngOnInit() {
+    await this.ReloadList();
+  }
+
+  async onDelete(id:number) {
+    await this.schoolService.onDelete(id);
+    await this.ReloadList();
   }
 
 }
