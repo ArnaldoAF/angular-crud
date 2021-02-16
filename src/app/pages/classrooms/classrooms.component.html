@@ -3,16 +3,16 @@
     <div class="row">
         <a [routerLink]="['/classrooms/add/0']" class="btn btn-primary mb-3 col">Adiconar Turma</a>
     </div>
-    <div class="dropdown mb-4">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Selecionar Escola
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a *ngFor="let school of schoolList" class="dropdown-item">
-                {{school.name}}
-            </a>
-
-        </div>
+    <div class="form-group">
+        <label for="">Escola</label>
+        <select class="custom-select" name="id_school" required [(ngModel)]="selectedSchool" (change)="changeSchool()"> 
+            <option value=0 selected>Escolha...</option>
+            <option  *ngFor="let school of schoolList" 
+                    [value]="school.id" 
+                    >
+                    {{school.id}} - {{school.name}}
+            </option>
+        </select>
     </div>
     <div class="table-responsive-sm">
         <table class="table table-striped ">
