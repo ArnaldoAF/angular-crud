@@ -21,18 +21,11 @@
   ],
   "classrooms": [
     {
-      "id": 1,
-      "grade": "F",
-      "year": "6",
-      "class": "A",
-      "id_school": 2
-    },
-    {
       "id": 2,
-      "grade": "M",
-      "year": "1",
-      "class": "B",
-      "id_school": 1
+      "grade": "F",
+      "year": "2",
+      "class": "C",
+      "id_school": 2
     },
     {
       "id": 3,
@@ -40,6 +33,13 @@
       "year": "1",
       "class": "C",
       "id_school": 3
+    },
+    {
+      "id": 6,
+      "grade": "M",
+      "year": "1",
+      "class": "A",
+      "id_school": 2
     }
   ]
 }
