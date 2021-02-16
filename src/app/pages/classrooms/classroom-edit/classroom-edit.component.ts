@@ -34,7 +34,7 @@ export class ClassroomEditComponent implements OnInit {
     this.operation = this.id === 0;
 
     if(this.id != 0) {
-      this.classroom = await this.classroomService.onGetSchool(this.id);
+      this.classroom = await this.classroomService.onGetClassroom(this.id);
     }
   }
 

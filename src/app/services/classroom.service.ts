@@ -32,9 +32,22 @@ export class ClassroomService {
     return responseWithSchools;
   }
 
-  async onGetSchool(id: Number):Promise<Classroom> {
+  async onGetClassroom(id: Number):Promise<Classroom> {
     const response = await this.http.get<Classroom>(this.configUrl+"/"+id).toPromise();
+    const school =  await this.schoolService.onGetSchool(response.id_school);
+    const responseWithSchools = {
+      ...response,
+      school
+    }
     console.log(response);
+    return responseWithSchools;
+  }
+
+  async onGetClassroomsBySchool(id: Number):Promise<Classroom[]> {
+    const response = await this.http.get<Classroom[]>(this.configUrl+"?id_school="+id).toPromise();
+    
+    console.log(response);
+    console.log(this.configUrl+"?=id_school="+id);
     return response;
   }
 

@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { School } from 'src/app/models/school.model';
 import { SchoolService } from 'src/app/services/school.service';
+import { Classroom } from 'src/app/models/classroom.model';
+import { ClassroomService } from 'src/app/services/classroom.service';
 
 @Component({
   selector: 'app-school-edit',
@@ -12,6 +14,7 @@ import { SchoolService } from 'src/app/services/school.service';
 export class SchoolEditComponent implements OnInit {
   id: number;
   operation: boolean;
+  classroomList: Classroom[];
   school: School = {
     id:0,
     name:'',
@@ -19,14 +22,16 @@ export class SchoolEditComponent implements OnInit {
     cnpj:''
   };
 
-  constructor(private router: Router,private route: ActivatedRoute, private schoolService: SchoolService) { }
+  constructor(private router: Router,private route: ActivatedRoute, private schoolService: SchoolService, private classroomService: ClassroomService) { }
 
   async ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.operation = this.id === 0;
 
     if(this.id != 0) {
+      this.classroomList = [];
       this.school = await this.schoolService.onGetSchool(this.id);
+      this.classroomList = await this.classroomService.onGetClassroomsBySchool(this.id);
     }
   }
 

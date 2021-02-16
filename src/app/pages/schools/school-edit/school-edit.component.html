@@ -22,9 +22,38 @@
             <button type="submit" class="btn btn-primary mr-3 mb-3 col-12 col-sm-6">Salvar</button>
             <a [routerLink]="['/schools']" class="btn btn-secondary col-12 col-sm-6">Cancelar</a>
         </div>
+
+
     </form>
-    <div class=" row">
+    <div class=" row mb-3">
         <button *ngIf="!operation" (click)="onDelete(school.id)" class="btn btn-danger col-12 col-sm-6"><img src="../../../../assets/icons/trash.svg" alt="icon name" class="icon"/></button>
+    </div>
+    <div *ngIf="!operation">
+        <h3>Turmas</h3>
+        <div class="table-responsive-sm">
+            <table class="table table-striped ">
+                <thead>
+                    <th>Codigo</th>
+                    <th>Fun/Med</th>
+                    <th>Série</th>
+                    <th>Turma</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let classroom of classroomList">
+                        <td>{{ classroom.id }}</td>
+                        <td>{{ classroom.grade }}</td>
+                        <td>{{ classroom.year }}</td>
+                        <td>{{ classroom.class }}</td>
+                        <td>
+                            <a [routerLink]="['/classrooms/edit',classroom.id]" class="btn btn-primary"><img src="../../../../assets/icons/pencil.svg" class="icon" alt="icon name" /></a>
+                        </td>
+                        <td><button (click)="onDelete(classroom.id)" class="btn btn-danger"><img  src="../../../../assets/icons/trash.svg" class="icon" alt="icon name"/></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
