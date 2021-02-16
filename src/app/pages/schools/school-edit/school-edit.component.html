@@ -1,5 +1,8 @@
 <div class="container ">
-    <h2>{{operation ? 'Criar Escola' : 'Editar Escola'}}</h2>
+    <h2>
+        {{operation ? 'Criar Escola' : 'Editar Escola'}}
+        <a [routerLink]="['/schools']" class="btn btn-primary "><img src="../../../../assets/icons/arrow-thick-left.svg" class="icon" alt="icon name" />Voltar</a>
+    </h2>
 
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
